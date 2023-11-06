@@ -7,10 +7,15 @@ public class PlayerControl : MonoBehaviour {
 	//floats
 	public float _playerSpeed = 6f;
 
+    //GameObjects
+    public GameObject _package1Button;
 
 	// Use this for initialization
 	void Start () {
-		
+
+        Debug.Log("Frog in hub.");
+        _package1Button.SetActive (false);
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +25,7 @@ public class PlayerControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+        //Movement
         //Gets player postion on screen
         Vector3 _playerPos = Camera.main.WorldToViewportPoint(
             transform.position);
@@ -48,6 +54,20 @@ public class PlayerControl : MonoBehaviour {
         {
             transform.position -= new Vector3(
                 _playerSpeed * Time.deltaTime, 0);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D _otherObject)
+    {
+        if (_otherObject.tag == "Route 1 Package")
+        {
+            Debug.Log("There is a package here.");
+            _package1Button.SetActive(true);
+        }
+
+        if (_otherObject.tag == "Route 1")
+        {
+            Debug.Log("Player entering Route 1");
         }
     }
 }
