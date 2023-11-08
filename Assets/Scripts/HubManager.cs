@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //For loading levels
 
 public class HubManager : MonoBehaviour {
+
+	//Text
+	public Text _playerTask; //tells the player their task in the hub
 
     //Bools
     [SerializeField] bool _level1Selected;
@@ -17,8 +22,10 @@ public class HubManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		_route1TriggerZone.SetActive(false);
-	}
+        _playerTask.text = "Current Task: Choose a package to deliver.";
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,5 +46,8 @@ public class HubManager : MonoBehaviour {
         Debug.Log("Player locked in level one");
         _level1Selected = true;
 		_route1TriggerZone.SetActive(true);
-	}
+
+		//Update the objective
+        _playerTask.text = "Current Task: Proceed to Route 1 and deliver the package.";
+    }
 }
