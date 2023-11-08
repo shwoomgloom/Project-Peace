@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
     //bools
     public bool _playerCanMove;
-    [SerializeField] bool _playerHasAPackage;
+    //[SerializeField] bool _playerHasAPackage;
 
 	//floats
 	public float _playerSpeed = 6f;
@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 
         Debug.Log("Frog in hub.");
-        Debug.Log("Frog has package: " + _playerHasAPackage);
+        
         _package1Button.SetActive (false);
 
 	}
@@ -37,9 +37,7 @@ public class PlayerControl : MonoBehaviour {
         Vector3 _playerPos = Camera.main.WorldToViewportPoint(
             transform.position);
 
-        if (_playerCanMove == true)
-        {
-
+        
             //4-directional movement (top--down)
             if (Input.GetAxisRaw("Vertical") > 0 &&
                 _playerPos.y < 0.96f)//up
@@ -65,19 +63,12 @@ public class PlayerControl : MonoBehaviour {
                 transform.position -= new Vector3(
                     _playerSpeed * Time.deltaTime, 0);
             }
-        }
+        
 
     }
 
     void OnTriggerEnter2D(Collider2D _otherObject)
     {
-        if (_otherObject.tag == "Route 1 Package")
-        {
-            Debug.Log("There is a package here.");
-            _package1Button.SetActive(true);
-
-        }
-
         if (_otherObject.tag == "Route 1")
         {
             Debug.Log("Player entering Route 1");
