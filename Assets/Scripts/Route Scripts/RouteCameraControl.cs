@@ -5,8 +5,7 @@ using UnityEngine;
 public class RouteCameraControl : MonoBehaviour {
 
     //RouteTriggerControl
-    public RouteTriggerControl RouteTriggerControlScript;
-
+    
     //GameObject
     GameObject _player;
     GameObject _cameraTriggerZone;
@@ -41,7 +40,7 @@ public class RouteCameraControl : MonoBehaviour {
         Vector3 _playerPos = _offset + _player.transform.position;
 
 
-        if (_PlayerIsAtCenterOfScreen == true) { 
+        //if (_PlayerIsAtCenterOfScreen == true) { 
              //Only follow up to max/min x, y
             if (_playerPos.x > maxX)
                 _playerPos = new Vector3(maxX, _playerPos.y, _playerPos.z);
@@ -53,7 +52,7 @@ public class RouteCameraControl : MonoBehaviour {
                 _playerPos = new Vector3(_playerPos.x, minY, _playerPos.z);
 
         transform.position = _playerPos;
-        }
+        //}
 
     }
 }
