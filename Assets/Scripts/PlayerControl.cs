@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour {
 
     //bools
     public bool _playerCanMove;
-    //[SerializeField] bool _playerHasAPackage;
+    
 
 	//floats
 	public float _playerSpeed = 6f;
@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Debug.Log("Frog in hub.");
+        Debug.Log("Frog in scene.");
         
         _package1Button.SetActive (false);
 

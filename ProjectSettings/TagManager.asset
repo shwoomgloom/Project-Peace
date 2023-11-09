@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Route 1 Package
   - Route 1
+  - Camera Trigger
   layers:
   - Default
   - TransparentFX

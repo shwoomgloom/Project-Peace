@@ -33,7 +33,6 @@ public class HubManager : MonoBehaviour {
 		//Locks in if the Player selected to drop off package 1
 		if(_level1Selected == true)
 		{
-			
 			_package1YES.interactable = false;
 			_package1NO.interactable = false;
 			_package1SelectionMenu.SetActive(false);
