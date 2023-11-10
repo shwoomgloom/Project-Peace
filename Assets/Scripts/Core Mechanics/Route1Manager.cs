@@ -12,7 +12,7 @@ public class Route1Manager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        _playerTask.text = "Current Task: Deliver the package.";
+        _playerTask.text = "Current Task: Deliver the packages.";
     }
 	
 	// Update is called once per frame

@@ -51,6 +51,6 @@ public class Route1 : MonoBehaviour {
             yield return new WaitForSeconds(0.02f);
         }
 
-        SceneManager.LoadScene("Route1");
+        SceneManager.LoadScene("Route 1");
     }
 }

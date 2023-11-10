@@ -60,8 +60,13 @@ public class Packages : MonoBehaviour {
         _package1Button.SetActive(false );
 
         //destorys package object
-        GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
-        Invoke("DestroyObject", 0.5f);
+        foreach (GameObject package in GameObject.FindGameObjectsWithTag("Route 1 Package"))
+        {
+            package.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            Destroy(package);
+             //Invoke("DestroyObject", 0.5f);
+        }
+        
         _playerHasAPackage = true;
     }
 
