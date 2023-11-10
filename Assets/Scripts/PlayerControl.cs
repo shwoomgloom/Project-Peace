@@ -14,11 +14,14 @@ public class PlayerControl : MonoBehaviour {
     //GameObjects
     public GameObject _package1Button;
 
-	// Use this for initialization
-	void Start () {
+    public Animator animator;
+
+    // Use this for initialization
+    void Start () {
 
         Debug.Log("Frog in scene.");
-        
+
+        animator = GetComponent<Animator>();
         _package1Button.SetActive (false);
 
 	}
@@ -39,29 +42,55 @@ public class PlayerControl : MonoBehaviour {
 
         
             //4-directional movement (top--down)
+            //Up
             if (Input.GetAxisRaw("Vertical") > 0 &&
-                _playerPos.y < 0.96f)//up
+                _playerPos.y < 0.96f)
             {
                 transform.position += new Vector3(
                     0, _playerSpeed * Time.deltaTime);
+                animator.SetBool("WalkingUp", true);
+
+                animator.SetBool("WalkingDown", false);
+                animator.SetBool("WalkingRight", false);
+                animator.SetBool("WalkingLeft", false);
             }
+            //Down
             if (Input.GetAxisRaw("Vertical") < 0 &&
-                _playerPos.y > 0.03f) //down
+                _playerPos.y > 0.03f) 
             {
                 transform.position -= new Vector3(
                     0, _playerSpeed * Time.deltaTime);
+                animator.SetBool("WalkingDown", true);
+
+                animator.SetBool("WalkingRight", false);
+                animator.SetBool("WalkingUp", false);
+                animator.SetBool("WalkingLeft", false);
             }
+            //Right
             if (Input.GetAxisRaw("Horizontal") > 0 &&
-                _playerPos.x < 0.96f) //right
+                _playerPos.x < 0.96f) 
             {
                 transform.position += new Vector3(
                     _playerSpeed * Time.deltaTime, 0);
+            
+                animator.SetBool("WalkingRight", true);
+
+                animator.SetBool("WalkingDown", false);
+                animator.SetBool("WalkingUp", false);
+                animator.SetBool("WalkingLeft", false);
             }
+            //Left
             if (Input.GetAxisRaw("Horizontal") < 0 &&
-               _playerPos.x > 0.03f) //left
+               _playerPos.x > 0.03f) 
             {
                 transform.position -= new Vector3(
                     _playerSpeed * Time.deltaTime, 0);
+
+                animator.SetBool("WalkingLeft", true);
+
+                animator.SetBool("WalkingDown", false);
+                animator.SetBool("WalkingRight", false);
+                animator.SetBool("WalkingUp", false);
             }
         
 
