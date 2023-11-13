@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement; //For loading levels
 
 public class HubManager : MonoBehaviour {
 
+	public Route1 Route1;
+
 	//Text
 	public Text _playerTask; //tells the player their task in the hub
 
@@ -45,6 +47,8 @@ public class HubManager : MonoBehaviour {
         Debug.Log("Player locked in level one");
         _level1Selected = true;
 		_route1TriggerZone.SetActive(true);
+
+		Route1.StartCoroutine(Route1.FlashColor());
 
 		//Update the objective
         _playerTask.text = "Current Task: Proceed to Route 1 and deliver the packages.";

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RouteTriggerControl : MonoBehaviour {
 
 	//Bools
-	[SerializeField] bool _playerIsAtCenter;
+	public bool _playerIsAtCenter;
 
 	// Use this for initialization
 	void Start () {

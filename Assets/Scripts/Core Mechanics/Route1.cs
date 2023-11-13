@@ -10,13 +10,20 @@ public class Route1 : MonoBehaviour {
 	//GameObject
 	public GameObject _loadingOverlay;
 
-	// Use this for initialization
-	void Start () {
+    //Color
+    [SerializeField] Color _highlightColor, _returnColor;
+    Color _defaultColor;
+
+    // Use this for initialization
+    void Start () {
+
 		_loadingOverlay.SetActive(false);
-	}
+        _defaultColor = GetComponent<SpriteRenderer>().color;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
 
     }
 
@@ -52,5 +59,39 @@ public class Route1 : MonoBehaviour {
         }
 
         SceneManager.LoadScene("Route 1");
+    }
+
+    //Sign flash
+   public  IEnumerator FlashColor()
+    {
+        //Change color
+        GetComponent<SpriteRenderer>().color = _highlightColor;
+
+        //Wait a half second
+        yield return new WaitForSeconds(0.5f);
+
+        //Change to defualt color
+        GetComponent<SpriteRenderer>().color = _returnColor;
+
+        //Wait a half second
+        yield return new WaitForSeconds(0.5f);
+
+        //Change color
+        GetComponent<SpriteRenderer>().color = _highlightColor;
+
+        //Wait a half second
+        yield return new WaitForSeconds(0.5f);
+
+        //Change to defualt color
+        GetComponent<SpriteRenderer>().color = _returnColor;
+
+        //Change color
+        GetComponent<SpriteRenderer>().color = _highlightColor;
+
+        //Wait a half second
+        yield return new WaitForSeconds(0.5f);
+
+        //Change to defualt color
+        GetComponent<SpriteRenderer>().color = _returnColor;
     }
 }
