@@ -677,6 +677,7 @@ MonoBehaviour:
   _package1NO: {fileID: 615619716}
   _package1SelectionMenu: {fileID: 359265639}
   _route1TriggerZone: {fileID: 1957701097}
+  _route1TriggernonFlashable: {fileID: 785152762}
 --- !u!1 &725803542
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +775,7 @@ GameObject:
   m_Layer: 0
   m_Name: Route 1 Trigger zone (non flash)
   m_TagString: Route 1
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1320,7 +1321,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1396780152
 Animator:
   serializedVersion: 3

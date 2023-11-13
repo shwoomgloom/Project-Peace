@@ -20,7 +20,7 @@ public class HubManager : MonoBehaviour {
 
 	//GameObjects
 	public GameObject _package1SelectionMenu;
-	public GameObject _route1TriggerZone;
+	public GameObject _route1TriggerZone, _route1TriggernonFlashable;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +46,10 @@ public class HubManager : MonoBehaviour {
 	{
         Debug.Log("Player locked in level one");
         _level1Selected = true;
-		_route1TriggerZone.SetActive(true);
+
+        _route1TriggernonFlashable.SetActive(false);
+
+        _route1TriggerZone.SetActive(true);
 
 		Route1.StartCoroutine(Route1.FlashColor());
 

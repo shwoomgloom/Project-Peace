@@ -7,6 +7,7 @@ TagManager:
   - Route 1 Package
   - Route 1
   - Camera Trigger
+  - DeliveryPoint
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3085252191
+    locked: 0
+  - name: Objects
+    uniqueID: 3130446851
     locked: 0
