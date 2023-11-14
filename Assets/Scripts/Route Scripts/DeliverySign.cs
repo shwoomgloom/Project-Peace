@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DeliverySign : MonoBehaviour {
 
+
     //GameObjects
     public GameObject _package1DropOffMenu;
+    public GameObject _playerGuidePoint;
 
     //bool
     [SerializeField] bool _playerDroppedOffPackage;
@@ -55,8 +57,9 @@ public class DeliverySign : MonoBehaviour {
         Debug.Log("Player dropped off a package.");
         //deactivated menu
         _package1DropOffMenu.SetActive(false);
-
+        _playerGuidePoint.SetActive(false);
         _playerDroppedOffPackage = true;
+
     }
 
     public void PlayerDoesNotDropOffPackage()

@@ -13,7 +13,8 @@ public class Route1Manager : MonoBehaviour {
     public Transform _target;
 
     //Text
-    public Text _playerTask, _packagesDeliveredText; //tells the player their task in the hub
+    public Text _playerTask, _packagesDeliveredText; //tells the player their task on the route
+
 
     // Use this for initialization
     void Start () {
@@ -27,6 +28,12 @@ public class Route1Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        _packagesDeliveredText.text = _packagesDelivered + "/3";
+    }
+
+    public void DeliverAPackage()
+    {
+        _packagesDelivered++;
+    }
 }

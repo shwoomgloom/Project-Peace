@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _package1DropOffMenu: {fileID: 129675613}
+  _playerGuidePoint: {fileID: 810088928}
   _playerDroppedOffPackage: 0
 --- !u!61 &580854992
 BoxCollider2D:
@@ -1180,6 +1181,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayerDropsOffPackage
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626309914338842, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 714635002}
+    - target: {fileID: 114626309914338842, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DeliverAPackage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae8f249003ef6814bac5cee52bcb4698, type: 2}
