@@ -11,7 +11,8 @@ public class DeliveryPointer : MonoBehaviour {
     //transform
     public Transform _target;
 
-    //GameObject
+    //Route1Manager
+
     
 
     void Start()
