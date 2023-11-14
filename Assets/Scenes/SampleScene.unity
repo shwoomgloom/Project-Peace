@@ -360,7 +360,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 56c90fd6c58b38e41a9693caf45552f7, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -1197,6 +1197,39 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 714635002}
+    - target: {fileID: 114210080738543584, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 56c90fd6c58b38e41a9693caf45552f7,
+        type: 3}
+    - target: {fileID: 114210080738543584, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210080738543584, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224424538857547874, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114367136644774718, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 56c90fd6c58b38e41a9693caf45552f7,
+        type: 3}
+    - target: {fileID: 114828531723402050, guid: ae8f249003ef6814bac5cee52bcb4698,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 56c90fd6c58b38e41a9693caf45552f7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae8f249003ef6814bac5cee52bcb4698, type: 2}
   m_IsPrefabParent: 0
