@@ -19,12 +19,13 @@ public class Route1Manager : MonoBehaviour {
     public Text _playerTask, _packagesDeliveredText; //tells the player their task on the route
 
     //Game Object
-    public GameObject _timerSlider;
+    public GameObject _timerSlider, _overviewScreen;
 
 
     // Use this for initialization
     void Start () {
 
+        _overviewScreen.SetActive(false);
         _packagesDelivered = 0;
         _playerTask.text = "Current Task: Deliver the packages.";
         _packagesDeliveredText.text = _packagesDelivered + "/3";
