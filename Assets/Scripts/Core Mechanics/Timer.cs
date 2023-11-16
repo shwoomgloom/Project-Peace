@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,10 +15,11 @@ public class Timer : MonoBehaviour {
 	public float gameTime;
 
 	//Bool
-	private bool stopTimer;
+	public bool stopTimer;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		
 		stopTimer = false;
 		timerSlider.maxValue = gameTime;
@@ -37,10 +39,11 @@ public class Timer : MonoBehaviour {
 		string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
 
 		//If time reaches 0, stop the timer
-		if(time <= 0 )
+		if(time <= 0)
 		{
 			stopTimer = true;
 		}
+		
 
 		//Continue Timer while its not 0
 		if(stopTimer == false )
@@ -48,5 +51,7 @@ public class Timer : MonoBehaviour {
 			timerText.text = textTime;
 			timerSlider.value = time;
 		}
+
+		
 	}
 }
