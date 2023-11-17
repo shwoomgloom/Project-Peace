@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour {
 	//Bool
 	public bool stopTimer;
 
+	public int minutes, seconds;
 
     // Use this for initialization
     void Start () {
@@ -33,8 +34,8 @@ public class Timer : MonoBehaviour {
 		float time = gameTime - Time.time;
 
 		//Second to minuet conversion stuff
-		int minutes = Mathf.FloorToInt(time / 60);
-		int seconds = Mathf.FloorToInt(time - minutes * 60f);
+		minutes = Mathf.FloorToInt(time / 60);
+		seconds = Mathf.FloorToInt(time - minutes * 60f);
 
 		string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
 
