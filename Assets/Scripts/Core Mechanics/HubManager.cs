@@ -54,6 +54,6 @@ public class HubManager : MonoBehaviour {
 		Route1.StartCoroutine(Route1.FlashColor());
 
 		//Update the objective
-        _playerTask.text = "Current Task: Proceed to Route 1 and deliver the packages.";
+        _playerTask.text = "Current Task: Proceed to Route 1.";
     }
 }

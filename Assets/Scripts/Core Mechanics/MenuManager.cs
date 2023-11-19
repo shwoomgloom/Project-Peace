@@ -7,10 +7,10 @@ public class MenuManager : MonoBehaviour {
 
 	//Game Objects
 	//Title screen and menus
-	public GameObject _titleScreen;
+	public GameObject _titleScreen, _controlScreen, _creditScreen;
 
 	//Button Game Objects
-	public GameObject _startB, _controlB, _creditB;
+	public GameObject _startB, _controlB, _creditB, _backB;
 	
 	//Misc. Game Objects
 	public GameObject _overlay;
@@ -21,7 +21,11 @@ public class MenuManager : MonoBehaviour {
 	void Start () {
 		
 		_overlay.SetActive(false);
-	}
+
+        _backB.SetActive(false);
+        _controlScreen.SetActive(false);
+		_creditScreen.SetActive(false);	
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,6 +44,37 @@ public class MenuManager : MonoBehaviour {
 	//Shows player the control menu
 	public void Controls()
 	{
+		//Disable title, enable control menu
+		_titleScreen.SetActive(false);
+		_overlay.SetActive(true);
+		_backB.SetActive(true);
+
+		_controlScreen.SetActive(true);	
+
+	}
+
+	//Shows player the credits
+	public void Credits()
+	{
+        //Disable title, enable credits
+        _titleScreen.SetActive(false);
+        _overlay.SetActive(true);
+		_backB.SetActive(true);
+
+		_creditScreen.SetActive(true );
+	}
+
+	//Back Button control
+	public void BackButton()
+	{
+		//Disable any current open 
+		_controlScreen.SetActive(false);
+		_creditScreen.SetActive(false);
+		_overlay.SetActive(false);	
+		_backB.SetActive(false);
+
+		//Enable title screen again
+		_titleScreen.SetActive(true);
 
 	}
 
