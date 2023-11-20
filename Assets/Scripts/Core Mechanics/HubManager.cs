@@ -10,22 +10,24 @@ public class HubManager : MonoBehaviour {
 	public Route1 Route1;
 
 	//Text
-	public Text _playerTask; //tells the player their task in the hub
+	public Text _playerTask, _letterHeader, letterContent, _NumberofLetters; //tells the player their task in the hub
 
     //Bools
     [SerializeField] bool _level1Selected;
 
     //Buttons
-    public Button _package1YES, _package1NO;
+    public Button _package1YES, _package1NO, _openLetterb, _closeLetterb;
 
 	//GameObjects
 	public GameObject _package1SelectionMenu;
 	public GameObject _route1TriggerZone, _route1TriggernonFlashable;
+	public GameObject _letterToPlayer;
 
 	// Use this for initialization
 	void Start () {
 
 		_route1TriggerZone.SetActive(false);
+		_letterToPlayer.SetActive(false);
         _playerTask.text = "Current Task: Choose a package to deliver.";
     }
 	
@@ -56,4 +58,16 @@ public class HubManager : MonoBehaviour {
 		//Update the objective
         _playerTask.text = "Current Task: Proceed to Route 1.";
     }
+
+	//Button that lets palyer check notices
+	public void NoticeSytem()
+	{
+        _letterToPlayer.SetActive(true);
+    }
+
+	public void CloseNotice()
+	{
+		_letterToPlayer.SetActive(false);
+		_NumberofLetters.text = "";
+	}
 }
