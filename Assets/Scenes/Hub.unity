@@ -144,7 +144,7 @@ RectTransform:
   m_GameObject: {fileID: 480118107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06528045, y: 0.06528042, z: 0.06528042}
+  m_LocalScale: {x: 0.04936635, y: 0.04936635, z: 0.04936635}
   m_Children: []
   m_Father: {fileID: 1080861585}
   m_RootOrder: 1
@@ -203,7 +203,9 @@ MonoBehaviour:
   m_Text: "Hey there! Welome to your \nfirst day on the job! We're \nso happy to have
     you working\nat Amphibian Mail Service.\n\nYour job is simple: just drop\noff
     the mail each day. Look\nout for the residents though.\nSome of the REALLY hate
-    the\nmail. They're almost a little\nevil.\n\n\t   -Leon from Management\n"
+    the\nmail. They're almost a little\nevil, but don't worry! We've\ngiven you some
+    pepper spray.\nTry not to use it though, any\ninjuries caused by it are docked
+    \nfrom YOUR pay.\n\n\t   \t\t\t-Leon from Management\n"
 --- !u!222 &480118111
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -11,13 +11,13 @@ public class Route1Manager : MonoBehaviour {
     public Timer overviewTimer;
 
     //Int 
-    public int _packagesDelivered, _injuredResidents;
+    public int _packagesDelivered, _injuredResidents, _playerPay;
 
     //Transform
     public Transform _target;
 
     //Text
-    public Text _playerTask, _packagesDeliveredText; //tells the player their task on the route
+    public Text _playerTask, _packagesDeliveredText, _dailyPayText, _totalDailyPayText; //tells the player their task on the route
 
     //Text for overview screen.
     public Text _totalPackagesDeliveredText, _residentsInjuredText;
@@ -35,7 +35,8 @@ public class Route1Manager : MonoBehaviour {
         _playerTask.text = "Current Task: Deliver the packages.";
         _packagesDeliveredText.text = _packagesDelivered + "/3";
 
-        //Sets Delivery menu to one spot
+        //Sets player starting pay to 0
+        _playerPay = 0;
 
     }
 	
@@ -63,6 +64,7 @@ public class Route1Manager : MonoBehaviour {
     public void DeliverAPackage()
     {
         _packagesDelivered ++;
+        _playerPay = _playerPay + 50;
     }
 
     //Win menu for if the player delivers a package
@@ -73,7 +75,9 @@ public class Route1Manager : MonoBehaviour {
         _overviewScreen.SetActive(true);
         _totalPackagesDeliveredText.text = "-Total Packages dropped off: " + _packagesDelivered + "/3";
         
-        _residentsInjuredText.text = "-Residents Injured: " + _injuredResidents;
+        _residentsInjuredText.text = "-Times Residents got sprayed: " + _injuredResidents;
+        _dailyPayText.text = "-Daily Pay: " + _playerPay;
+        _totalDailyPayText.text = "-Daily Pay after injury fees: " + (_playerPay - (_injuredResidents * 10));
     }
 
     public void BackToMenu()

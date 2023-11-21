@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemeyResidents : MonoBehaviour {
 
+    //Route1 Manager
+    public Route1Manager RouteManager;
+
 	//GameObjects
 	public GameObject _movePoint1, _movePoint2;
     public GameObject _orginalPoint1, _orginalPoint2;
@@ -31,6 +34,8 @@ public class EnemeyResidents : MonoBehaviour {
         {
             Debug.Log("WOAH MAN YOU'RE WAY TO CLOSE PEPPER SPRAAAYYY!");
             chasingPlayer = false;
+
+            RouteManager._injuredResidents++;
 
             //set move points to normal
             _movePoint1 = _orginalPoint1;
