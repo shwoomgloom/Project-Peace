@@ -8,6 +8,7 @@ TagManager:
   - Route 1
   - Camera Trigger
   - DeliveryPoint
+  - Angry Resident
   layers:
   - Default
   - TransparentFX

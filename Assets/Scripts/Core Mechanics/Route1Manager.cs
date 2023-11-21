@@ -23,12 +23,13 @@ public class Route1Manager : MonoBehaviour {
     public Text _totalPackagesDeliveredText, _residentsInjuredText;
 
     //Game Object
-    public GameObject _timerSlider, _overviewScreen;
+    public GameObject _timerSlider, _overviewScreen, _overlay;
 
 
     // Use this for initialization
     void Start () {
 
+        _overlay.SetActive(false);
         _overviewScreen.SetActive(false);
         _packagesDelivered = 0;
         _playerTask.text = "Current Task: Deliver the packages.";
@@ -73,5 +74,45 @@ public class Route1Manager : MonoBehaviour {
         _totalPackagesDeliveredText.text = "-Total Packages dropped off: " + _packagesDelivered + "/3";
         
         _residentsInjuredText.text = "-Residents Injured: " + _injuredResidents;
+    }
+
+    public void BackToMenu()
+    {
+        StartCoroutine(LoadingLevel());
+    }
+
+    public void BackToHUb()
+    {
+        StartCoroutine(LoadingHub());
+    }
+
+    IEnumerator LoadingLevel()
+    {
+        Debug.Log("Overlay activated");
+        _overlay.SetActive(true);
+        for (int i = 0; i <= 255; i += 5)
+        {
+            //fade the overlay out
+            _overlay.GetComponent<Image>().color =
+                new Color(0, 0, 0, i / 255.0f);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    IEnumerator LoadingHub()
+    {
+        Debug.Log("Overlay activated");
+        _overlay.SetActive(true);
+        for (int i = 0; i <= 255; i += 5)
+        {
+            //fade the overlay out
+            _overlay.GetComponent<Image>().color =
+                new Color(0, 0, 0, i / 255.0f);
+            yield return new WaitForSeconds(0.02f);
+        }
+
+        SceneManager.LoadScene("Hub");
     }
 }

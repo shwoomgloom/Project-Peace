@@ -12,8 +12,8 @@ public class Timer : MonoBehaviour {
 	public Text timerText;
 
 	//Float
-	public float gameTime;
-
+	[SerializeField] float GameTimeFull = 120;
+	float gameTime;
 	//Bool
 	public bool stopTimer;
 
@@ -21,7 +21,8 @@ public class Timer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
+		gameTime = GameTimeFull;
 		stopTimer = false;
 		timerSlider.maxValue = gameTime;
 		timerSlider.value = gameTime;
@@ -31,16 +32,16 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		float time = gameTime - Time.time;
+		gameTime -= Time.deltaTime;
 
 		//Second to minuet conversion stuff
-		minutes = Mathf.FloorToInt(time / 60);
-		seconds = Mathf.FloorToInt(time - minutes * 60f);
+		minutes = Mathf.FloorToInt(gameTime / 60);
+		seconds = Mathf.FloorToInt(gameTime - minutes * 60f);
 
 		string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
 
 		//If time reaches 0, stop the timer
-		if(time <= 0)
+		if(gameTime <= 0)
 		{
 			stopTimer = true;
 		}
@@ -50,9 +51,9 @@ public class Timer : MonoBehaviour {
 		if(stopTimer == false )
 		{
 			timerText.text = textTime;
-			timerSlider.value = time;
+			timerSlider.value = gameTime;
 		}
 
-		
-	}
+
+    }
 }

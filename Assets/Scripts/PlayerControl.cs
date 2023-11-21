@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
+    //Access to the timer
+    Timer timer;
+
     //bools
     public bool _playerCanMove;
     
@@ -19,7 +22,7 @@ public class PlayerControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        Debug.Log("Frog in scene.");
+
 
         animator = GetComponent<Animator>();
         _package1Button.SetActive (false);
@@ -102,5 +105,13 @@ public class PlayerControl : MonoBehaviour {
         {
             Debug.Log("Player entering Route 1");
         }
+
+        if(_otherObject.tag == "Angry Resident")
+        {
+            //If player is hit by a resident then lower the timer
+            // by 5 seconds
+        }
     }
+
+
 }

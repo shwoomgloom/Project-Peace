@@ -48,7 +48,7 @@ public class Route1 : MonoBehaviour {
     //temp?
     IEnumerator LoadingLevelOne()
     {
-        Debug.Log("Overlay activated");
+
         _loadingOverlay.SetActive(true);
         for (int i = 0; i <= 255; i += 5)
         {

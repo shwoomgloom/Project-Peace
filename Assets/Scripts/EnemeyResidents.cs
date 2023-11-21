@@ -6,36 +6,53 @@ public class EnemeyResidents : MonoBehaviour {
 
 	//GameObjects
 	public GameObject _movePoint1, _movePoint2;
+    public GameObject _orginalPoint1, _orginalPoint2;
     public GameObject _PlayerTarget; //Chase player point
 
     //Float
     public float speed = 3f;
 
+    //Bools
+    public bool chasingPlayer;
+
     // Use this for initialization
     void Start () {
-		
+
+        chasingPlayer = false;
         StartCoroutine(ResidentMoveNormal());
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        //If player pepper sprays enemey, they leave player alone
+        if ((Input.GetKeyDown(KeyCode.E)) && chasingPlayer == true)
+        {
+            Debug.Log("WOAH MAN YOU'RE WAY TO CLOSE PEPPER SPRAAAYYY!");
+            chasingPlayer = false;
+
+            //set move points to normal
+            _movePoint1 = _orginalPoint1;
+            _movePoint2 = _orginalPoint2;
+
+        }
+
 	}
 
-    /*
+    
     void OnTriggerEnter2D(Collider2D _otherObject)
     {
         if (_otherObject.tag == "Player")
         {
             //Move toward player
-            StopCoroutine(ResidentMoveNormal());
-            StartCoroutine(TargetPlayer());
-
+            _movePoint2 = _PlayerTarget;
+            _movePoint1 = _PlayerTarget;
+            chasingPlayer = true;
         }
 
     }
-    */
+    
 
     //Move Enumerator 
     IEnumerator ResidentMoveNormal()
@@ -78,18 +95,4 @@ public class EnemeyResidents : MonoBehaviour {
         }
 	}
 
-    //Targets the player
-    IEnumerator TargetPlayer()
-    {
-        while (true)
-        {
-            //Move towards the player if they are too close
-            while (transform.position != _PlayerTarget.transform.position)
-            {
-                transform.position = Vector3.MoveTowards(
-                transform.position, _PlayerTarget.transform.position,
-                    speed * Time.deltaTime);
-            }
-        }
-    }
 }

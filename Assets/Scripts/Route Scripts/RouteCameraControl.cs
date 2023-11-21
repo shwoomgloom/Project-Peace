@@ -30,9 +30,7 @@ public class RouteCameraControl : MonoBehaviour {
         //offset = camera possition - player position
         _offset = transform.position -
             _player.transform.position;
-        Debug.Log(_offset);
 
-       Debug.Log( RouteTriggerControl._playerIsAtCenter);
     }
 
     // Update is called once per frame
