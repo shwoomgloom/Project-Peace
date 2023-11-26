@@ -43,6 +43,10 @@ public class EnemeyResidents : MonoBehaviour {
 
         }
 
+        if(RouteManager.timer.stopTimer == true)
+        {
+            StopCoroutine(ResidentMoveNormal());
+        }
 	}
 
     

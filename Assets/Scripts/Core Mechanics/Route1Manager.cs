@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Route1Manager : MonoBehaviour {
 
+
     //Timer 
     public Timer timer;
     public Timer overviewTimer;
@@ -56,7 +57,9 @@ public class Route1Manager : MonoBehaviour {
         if(timer.stopTimer == true)
         {
             CompletedLevel();
+
         }
+
 
     }
 
@@ -80,6 +83,7 @@ public class Route1Manager : MonoBehaviour {
         _dailyPayText.text = "-Daily Pay: " + _playerPay;
         _totalDailyPayText.text = "-Daily Pay after injury fees: " + (_playerPay - (_injuredResidents * 10));
     }
+
 
     public void BackToMenu()
     {

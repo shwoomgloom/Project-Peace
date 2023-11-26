@@ -7,12 +7,11 @@ public class PlayerControl : MonoBehaviour {
     //Access to the timer
     Timer timer;
 
-    //Health bar Hearts
-    public Health heart1, heart2, heart3;
-
     //bools
     public bool _playerCanMove;
-    
+
+    //ints
+    public int _playerHealth = 3;
 
 	//floats
 	public float _playerSpeed = 6f;
@@ -20,13 +19,14 @@ public class PlayerControl : MonoBehaviour {
     //GameObjects
     public GameObject _package1Button;
     public GameObject _playerHealthBar;
+    public GameObject _heart1, _heart2, _heart3;
 
     public Animator animator;
 
     // Use this for initialization
     void Start () {
 
-
+        Debug.Log("Player Health " + _playerHealth);
 
         animator = GetComponent<Animator>();
         _package1Button.SetActive (false);
@@ -36,6 +36,21 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        //Check player health and update it as it goes
+        if(_playerHealth == 2)
+        {
+           _heart1.SetActive (false);
+        }
+        if(_playerHealth == 1)
+        {
+            _heart2 .SetActive (false);
+        }
+        if (_playerHealth == 0)
+        {
+            _heart3 .SetActive (false);
+        }
+
+
 	}
 
 	void FixedUpdate()

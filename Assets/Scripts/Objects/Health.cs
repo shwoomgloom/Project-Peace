@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
-    [SerializeField] Sprite _lostHealth;
-    [SerializeField] Sprite _defaultSprite;
+    [SerializeField] Image _lostHealth;
+    [SerializeField] Image _defaultSprite;
 
     // Use this for initialization
     void Start () {
 
-        _defaultSprite = GetComponent<SpriteRenderer>().sprite;
+        _defaultSprite = GetComponent<Image>();
     }
 	
 	// Update is called once per frame
@@ -22,6 +23,6 @@ public class Health : MonoBehaviour {
     // Changes the sprite from red to gray to indicate that the health has been lost
     public void LooseHealth()
     {
-        GetComponent<SpriteRenderer>().sprite = _lostHealth;
+        _defaultSprite = _lostHealth;
     }
 }
