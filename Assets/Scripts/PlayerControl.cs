@@ -7,6 +7,9 @@ public class PlayerControl : MonoBehaviour {
     //Access to the timer
     Timer timer;
 
+    //Health bar Hearts
+    public Health heart1, heart2, heart3;
+
     //bools
     public bool _playerCanMove;
     
@@ -16,6 +19,7 @@ public class PlayerControl : MonoBehaviour {
 
     //GameObjects
     public GameObject _package1Button;
+    public GameObject _playerHealthBar;
 
     public Animator animator;
 
@@ -108,8 +112,7 @@ public class PlayerControl : MonoBehaviour {
 
         if(_otherObject.tag == "Angry Resident")
         {
-            //If player is hit by a resident then lower the timer
-            // by 5 seconds
+            //If player is hit by a resident, take away health
         }
     }
 

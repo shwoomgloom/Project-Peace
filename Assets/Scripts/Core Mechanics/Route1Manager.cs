@@ -23,7 +23,7 @@ public class Route1Manager : MonoBehaviour {
     public Text _totalPackagesDeliveredText, _residentsInjuredText;
 
     //Game Object
-    public GameObject _timerSlider, _overviewScreen, _overlay;
+    public GameObject _timerSlider, _overviewScreen, _overlay, _playerHealthBar;
 
 
     // Use this for initialization
@@ -72,6 +72,7 @@ public class Route1Manager : MonoBehaviour {
     {
         _playerTask.text = "";
         _packagesDeliveredText.text = "";
+        _playerHealthBar.SetActive(false);
         _overviewScreen.SetActive(true);
         _totalPackagesDeliveredText.text = "-Total Packages dropped off: " + _packagesDelivered + "/3";
         
