@@ -15,12 +15,15 @@ public class MenuManager : MonoBehaviour {
 	//Misc. Game Objects
 	public GameObject _overlay;
 
-	//Buttons
+    //Audio work
+	AudioSource audioSource;
+    public AudioClip _menuPopUps, _startGameSound;
 
-	// Use this for initialization
-	void Start () {
-		
-		_overlay.SetActive(false);
+    // Use this for initialization
+    void Start () {
+
+        audioSource = GetComponent<AudioSource>();
+        _overlay.SetActive(false);
 
         _backB.SetActive(false);
         _controlScreen.SetActive(false);
@@ -37,6 +40,7 @@ public class MenuManager : MonoBehaviour {
 	{
 		//activate overlay
 		_overlay.SetActive(true);
+		audioSource.PlayOneShot(_startGameSound);
 
 		StartCoroutine(LoadLevel());
 	}
@@ -49,9 +53,11 @@ public class MenuManager : MonoBehaviour {
 		_overlay.SetActive(true);
 		_backB.SetActive(true);
 
-		_controlScreen.SetActive(true);	
+		_controlScreen.SetActive(true);
 
-	}
+        audioSource.PlayOneShot(_menuPopUps);
+
+    }
 
 	//Shows player the credits
 	public void Credits()
@@ -62,7 +68,8 @@ public class MenuManager : MonoBehaviour {
 		_backB.SetActive(true);
 
 		_creditScreen.SetActive(true );
-	}
+        audioSource.PlayOneShot(_menuPopUps);
+    }
 
 	//Back Button control
 	public void BackButton()
@@ -75,8 +82,8 @@ public class MenuManager : MonoBehaviour {
 
 		//Enable title screen again
 		_titleScreen.SetActive(true);
-
-	}
+        audioSource.PlayOneShot(_menuPopUps);
+    }
 
     IEnumerator LoadLevel()
 	{
