@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour {
 
     //GameObjects
     public GameObject _package1Button;
-    public GameObject _playerHealthBar;
+    public GameObject _playerHealthBar, _grayHealthBar;
     public GameObject _heart1, _heart2, _heart3;
 
     public Animator animator;
@@ -128,6 +128,8 @@ public class PlayerControl : MonoBehaviour {
         if(_otherObject.tag == "Angry Resident")
         {
             //If player is hit by a resident, take away health
+            Debug.Log("Ouch!");
+            _playerHealth = _playerHealth - 1;
         }
     }
 

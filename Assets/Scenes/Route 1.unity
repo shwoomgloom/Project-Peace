@@ -849,7 +849,27 @@ Prefab:
     - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
         type: 2}
       propertyPath: m_Size.x
-      value: 22.80804
+      value: 22.092808
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334806897806628, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 714635003}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 1.4727964
+      objectReference: {fileID: 0}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 16.780388
+      objectReference: {fileID: 0}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.022533417
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 389b61a41acf7824d8c293aa460f48d7, type: 2}
@@ -1435,12 +1455,12 @@ Prefab:
     - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
         type: 2}
       propertyPath: m_Offset.x
-      value: -3.7695265
+      value: -0.21270704
       objectReference: {fileID: 0}
     - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
         type: 2}
       propertyPath: m_Size.x
-      value: 22.80804
+      value: 18.105778
       objectReference: {fileID: 0}
     - target: {fileID: 4151507376310798, guid: 389b61a41acf7824d8c293aa460f48d7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1456,6 +1476,21 @@ Prefab:
       propertyPath: RouteManager
       value: 
       objectReference: {fileID: 714635002}
+    - target: {fileID: 114334806897806628, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 714635003}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 2.1091213
+      objectReference: {fileID: 0}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 14.530067
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 389b61a41acf7824d8c293aa460f48d7, type: 2}
   m_IsPrefabParent: 0
@@ -2119,12 +2154,27 @@ Prefab:
     - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
         type: 2}
       propertyPath: m_Offset.x
-      value: 0.47040892
+      value: 0.2737112
       objectReference: {fileID: 0}
     - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
         type: 2}
       propertyPath: m_Size.x
-      value: 22.808044
+      value: 19.005201
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334806897806628, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 714635003}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 1.9312243
+      objectReference: {fileID: 0}
+    - target: {fileID: 61579035522530178, guid: 389b61a41acf7824d8c293aa460f48d7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 13.6919775
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 389b61a41acf7824d8c293aa460f48d7, type: 2}
@@ -2546,6 +2596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5bb20a2e915e1b489bd413f9fb6d8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControl: {fileID: 1396780147}
   timer: {fileID: 714635003}
   overviewTimer: {fileID: 714635004}
   _packagesDelivered: 0
@@ -2562,6 +2613,7 @@ MonoBehaviour:
   _overviewScreen: {fileID: 56895112}
   _overlay: {fileID: 1740778689}
   _playerHealthBar: {fileID: 2062216314}
+  _grayHealthBar: {fileID: 1294336680}
 --- !u!114 &714635003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,6 +3858,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39438b8c2b60c6044812faa003f32478, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1294336680 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1389360959076096, guid: cf4c97dbd47702a4c97e0e200f83d5aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1955562105}
 --- !u!1 &1307759717
 GameObject:
   m_ObjectHideFlags: 0
@@ -4173,6 +4230,7 @@ MonoBehaviour:
   _playerSpeed: 6
   _package1Button: {fileID: 129675613}
   _playerHealthBar: {fileID: 2062216314}
+  _grayHealthBar: {fileID: 1294336680}
   _heart1: {fileID: 2039223048}
   _heart2: {fileID: 1079143673}
   _heart3: {fileID: 462528721}

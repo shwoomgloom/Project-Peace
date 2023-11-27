@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemeyResidents : MonoBehaviour {
+    //Timer
+   public  Timer timer;
 
     //Route1 Manager
     public Route1Manager RouteManager;
@@ -43,8 +45,9 @@ public class EnemeyResidents : MonoBehaviour {
 
         }
 
-        if(RouteManager.timer.stopTimer == true)
+        if(timer.stopTimer == true)
         {
+            chasingPlayer = false;
             StopCoroutine(ResidentMoveNormal());
         }
 	}

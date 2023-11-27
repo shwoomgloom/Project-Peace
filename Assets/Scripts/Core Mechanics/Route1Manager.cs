@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Route1Manager : MonoBehaviour {
 
+    //Player Control Connections
+    public PlayerControl playerControl;
 
     //Timer 
     public Timer timer;
@@ -24,7 +26,7 @@ public class Route1Manager : MonoBehaviour {
     public Text _totalPackagesDeliveredText, _residentsInjuredText;
 
     //Game Object
-    public GameObject _timerSlider, _overviewScreen, _overlay, _playerHealthBar;
+    public GameObject _timerSlider, _overviewScreen, _overlay, _playerHealthBar, _grayHealthBar;
 
 
     // Use this for initialization
@@ -48,7 +50,7 @@ public class Route1Manager : MonoBehaviour {
         _packagesDeliveredText.text = _packagesDelivered + "/3";
 
         //Stop timer if the player drops off all packages
-        if (_packagesDelivered >= 3)
+        if (_packagesDelivered >= 3 || playerControl._playerHealth <= 0)
         {
             timer.stopTimer = true;
             overviewTimer.stopTimer = true;
@@ -75,6 +77,7 @@ public class Route1Manager : MonoBehaviour {
     {
         _playerTask.text = "";
         _packagesDeliveredText.text = "";
+        _grayHealthBar.SetActive(false);
         _playerHealthBar.SetActive(false);
         _overviewScreen.SetActive(true);
         _totalPackagesDeliveredText.text = "-Total Packages dropped off: " + _packagesDelivered + "/3";

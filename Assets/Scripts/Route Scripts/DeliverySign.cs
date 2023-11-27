@@ -46,7 +46,6 @@ public class DeliverySign : MonoBehaviour {
 
             if (_playerDroppedOffPackage == false)
             {
-                Debug.Log("Player hit sign");
                 _package1DropOffMenu.SetActive(true);
             }
 
@@ -68,7 +67,6 @@ public class DeliverySign : MonoBehaviour {
 
     public void PlayerDropsOffPackage()
     {
-        Debug.Log("Player dropped off a package.");
         //deactivated menu
         _package1DropOffMenu.SetActive(false);
         //_playerGuidePoint.SetActive(false);
