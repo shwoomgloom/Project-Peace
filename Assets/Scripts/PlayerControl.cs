@@ -23,12 +23,17 @@ public class PlayerControl : MonoBehaviour {
 
     public Animator animator;
 
+    //Audio Related Work
+    AudioSource audioSource;
+    public AudioClip _lowHealthWarning;
+
     // Use this for initialization
     void Start () {
 
         Debug.Log("Player Health " + _playerHealth);
 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         _package1Button.SetActive (false);
 
 	}
@@ -44,6 +49,7 @@ public class PlayerControl : MonoBehaviour {
         if(_playerHealth == 1)
         {
             _heart2 .SetActive (false);
+            audioSource.PlayOneShot(_lowHealthWarning);
         }
         if (_playerHealth == 0)
         {

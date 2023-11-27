@@ -28,9 +28,15 @@ public class Route1Manager : MonoBehaviour {
     //Game Object
     public GameObject _timerSlider, _overviewScreen, _overlay, _playerHealthBar, _grayHealthBar;
 
+    //Audio Related Work
+    AudioSource audioSource;
+    public AudioClip _packageDropOffSound;
+
 
     // Use this for initialization
     void Start () {
+
+        audioSource = GetComponent<AudioSource>();
 
         _overlay.SetActive(false);
         _overviewScreen.SetActive(false);
@@ -68,6 +74,7 @@ public class Route1Manager : MonoBehaviour {
     //Actknowledge a package was dropped off
     public void DeliverAPackage()
     {
+        audioSource.PlayOneShot(_packageDropOffSound);
         _packagesDelivered ++;
         _playerPay = _playerPay + 50;
     }

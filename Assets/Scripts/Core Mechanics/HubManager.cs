@@ -23,10 +23,16 @@ public class HubManager : MonoBehaviour {
 	public GameObject _route1TriggerZone, _route1TriggernonFlashable;
 	public GameObject _letterToPlayer;
 
-	// Use this for initialization
-	void Start () {
+    //Audio Related Work
+    AudioSource audioSource;
 
-		_route1TriggerZone.SetActive(false);
+
+    // Use this for initialization
+    void Start () {
+
+        audioSource = GetComponent<AudioSource>();
+
+        _route1TriggerZone.SetActive(false);
 		_letterToPlayer.SetActive(false);
         _playerTask.text = "Current Task: Choose a package to deliver.";
     }

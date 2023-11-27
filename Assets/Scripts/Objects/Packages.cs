@@ -14,9 +14,14 @@ public class Packages : MonoBehaviour {
     //bool
     [SerializeField] bool _playerHasAPackage;
 
+    //Audio Related Work
+    AudioSource audioSource;
+    public AudioClip _packagePopUp;
+
     // Use this for initialization
     void Start () {
 
+        audioSource = GetComponent<AudioSource>();
         Debug.Log("Frog has package: " + _playerHasAPackage);
     }
 	
@@ -33,8 +38,8 @@ public class Packages : MonoBehaviour {
 
             if (_playerHasAPackage == false)
             {
-                Debug.Log("There is a package here.");
                 _package1Button.SetActive(true);
+                audioSource.PlayOneShot(_packagePopUp);
             }
           
         }
@@ -47,7 +52,6 @@ public class Packages : MonoBehaviour {
         {
             if (_playerHasAPackage == false)
             {
-                Debug.Log("Player walked away.");
                 _package1Button.SetActive(false);
             }
         }

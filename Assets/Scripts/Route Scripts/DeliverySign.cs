@@ -20,8 +20,14 @@ public class DeliverySign : MonoBehaviour {
     //bool
     [SerializeField] bool _playerDroppedOffPackage;
 
+    //Audio Related Work
+    AudioSource audioSource;
+    public AudioClip _signPopUp;
+
     // Use this for initialization
     void Start () {
+
+        audioSource = GetComponent<AudioSource>();
 
         _defaultSprite = GetComponent<SpriteRenderer>().sprite;
         _defaultColor = GetComponent<SpriteRenderer>().color;
@@ -47,6 +53,7 @@ public class DeliverySign : MonoBehaviour {
             if (_playerDroppedOffPackage == false)
             {
                 _package1DropOffMenu.SetActive(true);
+                audioSource.PlayOneShot(_signPopUp);
             }
 
         }
