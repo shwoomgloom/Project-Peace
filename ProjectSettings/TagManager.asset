@@ -9,6 +9,7 @@ TagManager:
   - Camera Trigger
   - DeliveryPoint
   - Angry Resident
+  - Water
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class PlayerControl : MonoBehaviour {
 
     //Audio Related Work
     AudioSource audioSource;
-    public AudioClip _lowHealthWarning;
+    public AudioClip _lowHealthWarning, _splashSound;
 
     // Use this for initialization
     void Start () {
@@ -136,6 +136,10 @@ public class PlayerControl : MonoBehaviour {
             //If player is hit by a resident, take away health
             Debug.Log("Ouch!");
             _playerHealth = _playerHealth - 1;
+        }
+        if(_otherObject.tag == "Water")
+        {
+            audioSource.PlayOneShot(_splashSound);
         }
     }
 
