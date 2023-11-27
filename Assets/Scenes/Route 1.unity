@@ -2708,7 +2708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 1705588069}
   timerText: {fileID: 561675434}
-  GameTimeFull: 120
+  GameTimeFull: 60
   stopTimer: 0
   minutes: 0
   seconds: 0
@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerSlider: {fileID: 139245102}
   timerText: {fileID: 515963588}
-  GameTimeFull: 120
+  GameTimeFull: 60
   stopTimer: 0
   minutes: 0
   seconds: 0
@@ -4408,6 +4408,8 @@ MonoBehaviour:
   _heart3: {fileID: 462528721}
   animator: {fileID: 0}
   _lowHealthWarning: {fileID: 8300000, guid: 6ecd883d5b7d61749b6b4a5475ca0053, type: 3}
+  _splashSound: {fileID: 0}
+  _pepperSpray: {fileID: 8300000, guid: a795791a08f99a34da079a022a1647f3, type: 3}
 --- !u!212 &1396780148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4543,7 +4545,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

@@ -38,6 +38,10 @@ public class Route1Manager : MonoBehaviour {
 
         audioSource = GetComponent<AudioSource>();
 
+        //HEALTH BAR DISABLED BECAUSE IT FEELS UNESSARY AS A PUNISHMENT WHEN PLAYER IS ALREADY CHASED
+        _playerHealthBar.SetActive(false);
+        _grayHealthBar.SetActive(false);
+
         _overlay.SetActive(false);
         _overviewScreen.SetActive(false);
         _packagesDelivered = 0;
@@ -56,7 +60,7 @@ public class Route1Manager : MonoBehaviour {
         _packagesDeliveredText.text = _packagesDelivered + "/3";
 
         //Stop timer if the player drops off all packages
-        if (_packagesDelivered >= 3 || playerControl._playerHealth <= 0)
+        if (_packagesDelivered >= 3 ) //|| playerControl._playerHealth <= 0)
         {
             timer.stopTimer = true;
             overviewTimer.stopTimer = true;
@@ -91,7 +95,7 @@ public class Route1Manager : MonoBehaviour {
         
         _residentsInjuredText.text = "-Times Residents got sprayed: " + _injuredResidents;
         _dailyPayText.text = "-Daily Pay: " + _playerPay;
-        _totalDailyPayText.text = "-Daily Pay after injury fees: " + (_playerPay - (_injuredResidents * 10));
+        _totalDailyPayText.text = "-Daily Pay after injury fees: " + (_playerPay - (_injuredResidents * 25));
     }
 
 

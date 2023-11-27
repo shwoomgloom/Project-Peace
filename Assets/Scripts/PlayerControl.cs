@@ -25,7 +25,7 @@ public class PlayerControl : MonoBehaviour {
 
     //Audio Related Work
     AudioSource audioSource;
-    public AudioClip _lowHealthWarning, _splashSound;
+    public AudioClip _lowHealthWarning, _splashSound, _pepperSpray;
 
     // Use this for initialization
     void Start () {
@@ -56,8 +56,14 @@ public class PlayerControl : MonoBehaviour {
             _heart3 .SetActive (false);
         }
 
+        //Spray pepper Spray
+        if ((Input.GetKeyDown(KeyCode.E)))
+        {
+            audioSource.PlayOneShot(_pepperSpray);
+        }
 
-	}
+
+    }
 
 	void FixedUpdate()
 	{
@@ -135,7 +141,7 @@ public class PlayerControl : MonoBehaviour {
         {
             //If player is hit by a resident, take away health
             Debug.Log("Ouch!");
-            _playerHealth = _playerHealth - 1;
+            //_playerHealth = _playerHealth - 1;
         }
         if(_otherObject.tag == "Water")
         {
