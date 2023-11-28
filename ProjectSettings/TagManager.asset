@@ -10,6 +10,7 @@ TagManager:
   - DeliveryPoint
   - Angry Resident
   - Water
+  - Route 2 Package
   layers:
   - Default
   - TransparentFX

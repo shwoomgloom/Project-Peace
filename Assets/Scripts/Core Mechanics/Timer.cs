@@ -57,12 +57,12 @@ public class Timer : MonoBehaviour {
 		string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
 
 		//Change color to yellow at halfway
-		if(gameTime <= 30)
+		if(gameTime <= 30 && stopTimer == false)
 		{
 			_fillcolor = _fillHalfTimeColor;
 		}
 
-		if(gameTime <= 15)
+		if(gameTime <= 15 && stopTimer == false)
 		{
 			_fillcolor = _fillLowTimeColor;
             audioSource.PlayOneShot(_timerWarningSound);
