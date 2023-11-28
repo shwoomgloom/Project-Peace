@@ -14,15 +14,29 @@ public class Timer : MonoBehaviour {
 	//Float
 	[SerializeField] float GameTimeFull = 120;
 	float gameTime;
+
 	//Bool
 	public bool stopTimer;
 
+	//Int
 	public int minutes, seconds;
+
+	//Color and fill area stuff
+	[SerializeField] Color _fillcolor, _fillHalfTimeColor, _fillLowTimeColor;
+
+	//GameObject
+	public GameObject _fillArea;
+
+    //Audio
+    AudioSource audioSource;
+	public AudioClip _timerWarningSound;
 
     // Use this for initialization
     void Start () {
 
-		gameTime = GameTimeFull;
+        audioSource = GetComponent<AudioSource>();
+
+        gameTime = GameTimeFull;
 		stopTimer = false;
 		timerSlider.maxValue = gameTime;
 		timerSlider.value = gameTime;
@@ -31,6 +45,8 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		_fillArea.GetComponent<Image>().color = _fillcolor;
 
 		gameTime -= Time.deltaTime;
 
@@ -39,6 +55,18 @@ public class Timer : MonoBehaviour {
 		seconds = Mathf.FloorToInt(gameTime - minutes * 60f);
 
 		string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+		//Change color to yellow at halfway
+		if(gameTime <= 30)
+		{
+			_fillcolor = _fillHalfTimeColor;
+		}
+
+		if(gameTime <= 15)
+		{
+			_fillcolor = _fillLowTimeColor;
+            audioSource.PlayOneShot(_timerWarningSound);
+        }
 
 		//If time reaches 0, stop the timer
 		if(gameTime <= 0)
