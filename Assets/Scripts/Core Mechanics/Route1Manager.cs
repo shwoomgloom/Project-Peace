@@ -30,7 +30,7 @@ public class Route1Manager : MonoBehaviour {
 
     //Audio Related Work
     AudioSource audioSource;
-    public AudioClip _packageDropOffSound;
+    public AudioClip _packageDropOffSound, _endScreenSound;
 
 
     // Use this for initialization
@@ -86,6 +86,8 @@ public class Route1Manager : MonoBehaviour {
     //Win menu for if the player delivers a package
     public void CompletedLevel()
     {
+        audioSource.PlayOneShot(_endScreenSound);
+
         _playerTask.text = "";
         _packagesDeliveredText.text = "";
         _grayHealthBar.SetActive(false);

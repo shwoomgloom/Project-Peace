@@ -20,9 +20,14 @@ public class EnemeyResidents : MonoBehaviour {
     //Bools
     public bool chasingPlayer;
 
+    //Audio related work
+    AudioSource audioSource;
+    public AudioClip _playerSpotted;
+
     // Use this for initialization
     void Start () {
 
+        audioSource = GetComponent<AudioSource>();
         chasingPlayer = false;
         StartCoroutine(ResidentMoveNormal());
 
@@ -57,6 +62,9 @@ public class EnemeyResidents : MonoBehaviour {
     {
         if (_otherObject.tag == "Player")
         {
+            //Play player spotted sound effect
+            audioSource.PlayOneShot(_playerSpotted);
+
             //Move toward player
             _movePoint2 = _PlayerTarget;
             _movePoint1 = _PlayerTarget;

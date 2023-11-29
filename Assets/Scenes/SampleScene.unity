@@ -793,6 +793,7 @@ MonoBehaviour:
   _route1TriggerZone: {fileID: 1957701097}
   _route1TriggernonFlashable: {fileID: 785152762}
   _letterToPlayer: {fileID: 1080861584}
+  _routeReady: {fileID: 8300000, guid: a15c55253a461fe4eb84f67dd50086cd, type: 3}
 --- !u!82 &714635003
 AudioSource:
   m_ObjectHideFlags: 0

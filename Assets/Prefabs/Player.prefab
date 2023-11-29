@@ -107,7 +107,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 55
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -209,6 +209,8 @@ MonoBehaviour:
   _heart3: {fileID: 0}
   animator: {fileID: 0}
   _lowHealthWarning: {fileID: 0}
+  _splashSound: {fileID: 0}
+  _pepperSpray: {fileID: 0}
 --- !u!212 &212416256383312646
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -25,6 +25,7 @@ public class HubManager : MonoBehaviour {
 
     //Audio Related Work
     AudioSource audioSource;
+	public AudioClip _routeReady;
 
 
     // Use this for initialization
@@ -52,6 +53,8 @@ public class HubManager : MonoBehaviour {
 
 	public void Level1Selected()
 	{
+		audioSource.PlayOneShot(_routeReady);
+
         Debug.Log("Player locked in level one");
         _level1Selected = true;
 
