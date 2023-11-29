@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Hop to It (Build).data.unityweb",
+"asmCodeUrl": "Hop to It (Build).asm.code.unityweb",
+"asmMemoryUrl": "Hop to It (Build).asm.memory.unityweb",
+"asmFrameworkUrl": "Hop to It (Build).asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

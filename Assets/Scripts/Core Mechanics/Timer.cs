@@ -28,13 +28,13 @@ public class Timer : MonoBehaviour {
 	public GameObject _fillArea;
 
     //Audio
-    AudioSource audioSource;
-	public AudioClip _timerWarningSound;
+    //AudioSource audioSource;
+	//public AudioClip _timerWarningSound;
 
     // Use this for initialization
     void Start () {
 
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
 
         gameTime = GameTimeFull;
 		stopTimer = false;
@@ -65,7 +65,6 @@ public class Timer : MonoBehaviour {
 		if(gameTime <= 15 && stopTimer == false)
 		{
 			_fillcolor = _fillLowTimeColor;
-            audioSource.PlayOneShot(_timerWarningSound);
         }
 
 		//If time reaches 0, stop the timer

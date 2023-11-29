@@ -68,8 +68,8 @@ public class Route1Manager : MonoBehaviour {
 
         if(timer.stopTimer == true)
         {
+            
             CompletedLevel();
-
         }
 
 
@@ -86,8 +86,7 @@ public class Route1Manager : MonoBehaviour {
     //Win menu for if the player delivers a package
     public void CompletedLevel()
     {
-        audioSource.PlayOneShot(_endScreenSound);
-
+       //audioSource.PlayOneShot(_endScreenSound);
         _playerTask.text = "";
         _packagesDeliveredText.text = "";
         _grayHealthBar.SetActive(false);
