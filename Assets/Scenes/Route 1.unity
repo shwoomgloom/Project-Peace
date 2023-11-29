@@ -2953,7 +2953,7 @@ MonoBehaviour:
   _grayHealthBar: {fileID: 1294336680}
   _packageDropOffSound: {fileID: 8300000, guid: e4de5c6b322ac3748bae497728862f98,
     type: 3}
-  _endScreenSound: {fileID: 8300000, guid: a15c55253a461fe4eb84f67dd50086cd, type: 3}
+  _endScreenSound: {fileID: 8300000, guid: 5eb438940b503ad49b2b9ce62b9655fd, type: 3}
 --- !u!114 &714635003
 MonoBehaviour:
   m_ObjectHideFlags: 0
